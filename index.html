@@ -1,308 +1,368 @@
-Test file!
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-<html>
-<head><title></title> 
-
-
+<head>
+<title>VersionOne Integration for Microsoft TFS</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="styles/help.css"/>
+<link type="text/css" rel="stylesheet" href="styles/jquery.fancybox.css"/>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<link href="jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="jquery.fancybox.js"></script>
-
-<style type="text/css">/*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
-.fancybox-wrap,
-.fancybox-skin,
-.fancybox-outer,
-.fancybox-inner,
-.fancybox-image,
-.fancybox-wrap iframe,
-.fancybox-wrap object,
-.fancybox-nav,
-.fancybox-nav span,
-.fancybox-tmp
-{
-	padding: 0;
-	margin: 0;
-	border: 0;
-	outline: none;
-	vertical-align: top;
-}
-
-.fancybox-wrap {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 8020;
-}
-
-.fancybox-skin {
-	position: relative;
-	background: #f9f9f9;
-	color: #444;
-	text-shadow: none;
-	-webkit-border-radius: 4px;
-	   -moz-border-radius: 4px;
-	        border-radius: 4px;
-}
-
-.fancybox-opened {
-	z-index: 8030;
-}
-
-.fancybox-opened .fancybox-skin {
-	-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-	   -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-	        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-}
-
-.fancybox-outer, .fancybox-inner {
-	position: relative;
-}
-
-.fancybox-inner {
-	overflow: hidden;
-}
-
-.fancybox-type-iframe .fancybox-inner {
-	-webkit-overflow-scrolling: touch;
-}
-
-.fancybox-error {
-	color: #444;
-	font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
-	margin: 0;
-	padding: 15px;
-	white-space: nowrap;
-}
-
-.fancybox-image, .fancybox-iframe {
-	display: block;
-	width: 100%;
-	height: 100%;
-}
-
-.fancybox-image {
-	max-width: 100%;
-	max-height: 100%;
-}
-
-#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-	background-image: url('fancybox_sprite.png');
-}
-
-#fancybox-loading {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	margin-top: -22px;
-	margin-left: -22px;
-	background-position: 0 -108px;
-	opacity: 0.8;
-	cursor: pointer;
-	z-index: 8060;
-}
-
-#fancybox-loading div {
-	width: 44px;
-	height: 44px;
-	background: url('fancybox_loading.gif') center center no-repeat;
-}
-
-.fancybox-close {
-	position: absolute;
-	top: -18px;
-	right: -18px;
-	width: 36px;
-	height: 36px;
-	cursor: pointer;
-	z-index: 8040;
-}
-
-.fancybox-nav {
-	position: absolute;
-	top: 0;
-	width: 40%;
-	height: 100%;
-	cursor: pointer;
-	text-decoration: none;
-	background: transparent url('blank.gif'); /* helps IE */
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
-	z-index: 8040;
-}
-
-.fancybox-prev {
-	left: 0;
-}
-
-.fancybox-next {
-	right: 0;
-}
-
-.fancybox-nav span {
-	position: absolute;
-	top: 50%;
-	width: 36px;
-	height: 34px;
-	margin-top: -18px;
-	cursor: pointer;
-	z-index: 8040;
-	visibility: hidden;
-}
-
-.fancybox-prev span {
-	left: 10px;
-	background-position: 0 -36px;
-}
-
-.fancybox-next span {
-	right: 10px;
-	background-position: 0 -72px;
-}
-
-.fancybox-nav:hover span {
-	visibility: visible;
-}
-
-.fancybox-tmp {
-	position: absolute;
-	top: -99999px;
-	left: -99999px;
-	visibility: hidden;
-	max-width: 99999px;
-	max-height: 99999px;
-	overflow: visible !important;
-}
-
-/* Overlay helper */
-
-.fancybox-lock {
-    overflow: hidden !important;
-    width: auto;
-}
-
-.fancybox-lock body {
-    overflow: hidden !important;
-}
-
-.fancybox-lock-test {
-    overflow-y: hidden !important;
-}
-
-.fancybox-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	overflow: hidden;
-	display: none;
-	z-index: 8010;
-	background: url('fancybox_overlay.png');
-}
-
-.fancybox-overlay-fixed {
-	position: fixed;
-	bottom: 0;
-	right: 0;
-}
-
-.fancybox-lock .fancybox-overlay {
-	overflow: auto;
-	overflow-y: scroll;
-}
-
-/* Title helper */
-
-.fancybox-title {
-	visibility: hidden;
-	font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
-	position: relative;
-	text-shadow: none;
-	z-index: 8050;
-}
-
-.fancybox-opened .fancybox-title {
-	visibility: visible;
-}
-
-.fancybox-title-float-wrap {
-	position: absolute;
-	bottom: 0;
-	right: 50%;
-	margin-bottom: -35px;
-	z-index: 8050;
-	text-align: center;
-}
-
-.fancybox-title-float-wrap .child {
-	display: inline-block;
-	margin-right: -100%;
-	padding: 2px 20px;
-	background: transparent; /* Fallback for web browsers that doesn't support RGBa */
-	background: rgba(0, 0, 0, 0.8);
-	-webkit-border-radius: 15px;
-	   -moz-border-radius: 15px;
-	        border-radius: 15px;
-	text-shadow: 0 1px 2px #222;
-	color: #FFF;
-	font-weight: bold;
-	line-height: 24px;
-	white-space: nowrap;
-}
-
-.fancybox-title-outside-wrap {
-	position: relative;
-	margin-top: 10px;
-	color: #fff;
-}
-
-.fancybox-title-inside-wrap {
-	padding-top: 10px;
-}
-
-.fancybox-title-over-wrap {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	color: #fff;
-	padding: 10px;
-	background: #000;
-	background: rgba(0, 0, 0, .8);
-}
-
-/*Retina graphics!*/
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-	   only screen and (min--moz-device-pixel-ratio: 1.5),
-	   only screen and (min-device-pixel-ratio: 1.5){
-
-	#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-		background-image: url('fancybox_sprite@2x.png');
-		background-size: 44px 152px; /*The size of the normal image, half the size of the hi-res image*/
-	}
-
-	#fancybox-loading div {
-		background-image: url('fancybox_loading@2x.gif');
-		background-size: 24px 24px; /*The size of the normal image, half the size of the hi-res image*/
-	}
-}</style>
-
+<script type="text/javascript" src="scripts/jquery.fancybox.js"></script>
 </head>
 
-
-
-
 <body>
-
-<script type="text/javascript">
-	$(document).ready(function() {
+    <script type="text/javascript">
+	    $(document).ready(function() {
 		$(".fancybox").fancybox();
-	});
-</script>
+	    });
+    </script>
 
+	<div class="main">
+		<h1>VersionOne Integration for Microsoft TFS</h1>
+        <p>VersionOne&#39;s integration for Microsoft Team Foundation Server (TFS) provides visibility into source code changes while freeing the development team to focus on deliverables.</p>
+		<h2>Contents</h2>
+		<ul>
+			<li><a href='#Description'>Description</a></li>
+			<li><a href='#SystemRequirements'>System Requirements</a></li>
+			<li><a href='#Installation'>Installation and Configuration</a>
+            <li><a href='#UsingTheIntegration'>Using the Integration</a></li>
+			<li><a href='#Troubleshootingtips'>Troubleshooting Tips</a></li>
+			<li><a href='#Technology'>Technology</a></li>
+		</ul>
 
-<p><a class="fancybox" href="http://farm4.staticflickr.com/3712/9032543579_1217e6566b_b.jpg" id="single_1" title="Singapore from the air (Andrew Tan 2011)"><img alt="" src="http://farm4.staticflickr.com/3712/9032543579_1217e6566b_m.jpg" /> </a></p>
+		<h2><a name="Description"></a>Description</h2>
 
+		<p>The integration is comprised of two parts: the TFS Listener and the TFS Policy, and each must be installed and configured separately.</p>
 
+		<p>The TFS Listener is a web service that is responsible for responding to check-in and
+			build events from TFS. For each qualifying check-in event the
+			listener creates a &quot;ChangeSet&quot; in VersionOne, providing the
+			team visibility into the code changes for a story or defect. This
+			visibility can be useful when tracking down defects or performing
+			code reviews. For each qualifying build event, the listener creates a
+			&quot;BuildRun&quot; in VersionOne. If possible, BuildRuns are
+			associated with stories and/or defects in VersionOne, providing the
+			organization visibility into build contents. This visibility is
+			useful when selecting a build to release, identifying problem builds,
+			or generating release notes.</p>
 
+		<p>In order for the listener to create associations in VersionOne,
+			the check-in comment must include a VersionOne story or defect ID,
+			such as &quot;S-01454&quot; or &quot;D-21054&quot;. The TFS Policy ensures
+			that this requirement is met. When this policy is enabled for a TFS
+			project, each comment is scanned for a VersionOne ID. If not found,
+			the policy fails and prompts the user to select an ID from a dialog
+			box. The user may select from items they own in active iterations, or
+			from all items in active iterations.</p>
+        <p>The following sequence diagram shows the primary workflows of the integration:</p>
+
+<div class=wsd wsd_style="qsd">
+<pre>
+title VersionOne Integration for TFS (V1TFS)
+
+Developer->VS: Check In Changes
+VS->TFS: Check In Changes
+TFS->V1TFS: CheckinEvent
+V1TFS->VersionOne: ChangeSet
+TFS->TFS: Build Project
+TFS->V1TFS: BuildCompletionEvent2
+V1TFS->VersionOne: BuildRun
+</pre>
+</div>
+<script type="text/javascript" src="http://www.websequencediagrams.com/service.js"></script>
+
+		<h2><a name="SystemRequirements"></a>System Requirements</h2>
+		<ul>
+			<li>VersionOne:
+				<ul>
+					<li>Tested with VersionOne 14.3.5.6349. Expected to work with any version higher than 8.1.</li>
+					<li>Compatible with all VersionOne Editions and agile methodology condigurations.</li>
+					<li>VersionOne Authentication or Windows Integrated Authentication. (Does not work with other forms of SSO.)</li>
+					<li>A member with Team Member <a href="http://community.versionone.com/Help-Center/Administration/Roles-Project-Membership/Project_Roles">project role</a>, or higher, on integrated projects.</li>
+				</ul>
+			</li>
+			<li>Team Foundation Server:
+				<ul>
+					<li>Microsoft Team Foundation Server 2012, 2013</li>
+				</ul>
+			</li>
+			<li>VersionOne TFS Listener:
+				<ul>
+					<li>Tested with Windows Server 2012. Expected to work with Windows Server 2008 or higher, provided the required version of .NET Framework can be installed (see below). Windows must have the following features enabled:
+						<ul>
+							<li>NET-WCF-HTTP-Activation45</li>
+						</ul>
+					</li>
+					<li>Tested with .NET Framework 4.5. Expected to work with any subsequent version.</li>
+					<li>Tested with IIS 8.0. Expected to work with any version higher than 7.0. IIS must have the following features enabled:
+						<ul>
+							<li>IIS-WebServerRole</li>
+							<li>IIS-WebServer</li>
+							<li>IIS-ISAPIFilter</li>
+							<li>IIS-ISAPIExtensions</li>
+							<li>NetFx4Extended-ASPNET45</li>
+							<li>IIS-NetFxExtensibility45</li>
+							<li>IIS-ASPNET45</li>
+						</ul></li>
+					<li>Tested with TFS Client DLLs provided by Team Explorer. TFS Client DLLs are not redistributable so they are not provided with the integration. 
+                        Expected to work as long as any version of Visual Studio is installed. Recommendation: install on the same host as TFS so DLLs will be available.</li>
+					<li>Bi-directional network access between VersionOne TFS Listener and TFS. This usually means TCP/IP port 9090 for the TFS Listener. 
+                        Recommendation: install on the same host as TFS to avoid network issues such as firewalls.</li>
+					<li>Bi-directional network access between VersionOne TFS Listener and VersionOne. This usually means TCP/IP port 443 for https.</li>
+				</ul>
+            </li>
+			<li>VersionOne TFS Policy:
+				<ul>
+					<li>Requires .NET Framework 4.5 or higher.</li>
+					<li>Tested with VS2012 Professional Update 3 and Visual Studio 2013 Professional Update 4. Expected to work with any update to Visual Studio 2012/2013.</li>
+				</ul>
+			</li>
+		</ul>
+
+		<h2><a name="Installation"></a>Installation and Configuration</h2>
+		<p>Before using the integration you will need to perform the following actions:</p>
+		<ol>
+			<li>Install and configure the TFS Listener.</li>
+			<li>Install and enable the TFS Policy.</li>
+			<li>Enable VersionOne for Build Integration.</li>
+		</ol>
+
+		<h3>Installing the TFS Listener</h3>
+		<p>The VersionOne TFS Listener is a web service that must be
+			installed on a machine that has access to your VersionOne server and
+			your Team Foundation Server. It is recommended that you install the
+			listener on the Team Foundation Server.
+        </p>
+		<p>
+			To install the listener, execute
+			the <strong>VersionOne.Integration.TFS.Listener.Installer.msi</strong> on the appropriate machine and
+			follow the steps in the installation wizard. You can verify the
+			listener by navigating to the following URL into your browser:<br />
+			<code>http://[machine]:[port]/Service.svc</code>
+		</p>
+		<p><em>Note: Replace [machine] with the name of the machine hosting the
+			service, and [port] with the TCP port number that you provided in the
+			installer.</em></p>
+
+		<p>
+			For instance, if the machine hosting your TFS Server is called &quot;TFSServer&quot; and you specified port 9090 during the install, your
+			URL would be:<br />
+			<code> http://tfsserver:9090/Service.svc </code>
+		</p>
+
+		<p>
+			If successful, you should see a page similar to the following:</p>
+        <p>
+			<br /> 
+            <a class="fancybox" href="screenshots/ListenerWorks.jpg" title="TFS Listener Service"><img alt="" src="thumbnails/listenerworks.png"/></a>
+		</p>
+
+		<h3>Configuring the TFS Listener</h3>
+		<p>In order for the TFS Listener to work it must know which
+			VersionOne instance to use when creating assets and making
+			associations, and which TFS instance to use for listening to events. Configuring the TFS Listener is accomplished using the TFS Listener Configuration tool. The configuration tool is a separate Windows application that is installed as part of the listener installation. If you need to reconfigure the listener at a later date, the configuration tool is available from the Windows Start menu under
+			Program Files &gt; VersionOne &gt; TFS Listener &gt; <span style="font-size:10.5pt;line-height:107%;
+font-family:&quot;Lucida Sans Unicode&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#454545;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:
+AR-SA">VersionOne.Integration.Tfs.Listener.Config</span>.</p>
+
+		<p>The configuration tool has 3 tabs:</p>
+
+		<ol>
+			<li>VersionOne Server
+				<p>
+					This tab allows you to configure connectivity 
+                    to your VersionOne instance. The values that you enter depend on the authentication method that your VersionOne instance is configured to use.</p>
+                <p>
+                    For VersionOne (Basic) authentication, enter the following values in the fields provided:</p>
+                <ul>
+                    <li><b>VersionOne Server URL</b>: The URL of your VersionOne instance</li>
+                    <li><b>VersionOne Username</b>: The username of the member account that the listener will use </li>
+                    <li><b>VersionOne Password</b>: The password of the member account that the listener will use</li>
+                </ul>
+                <p>
+                    For Windows authentication, enter the following values in the fields provided:</p>
+                <ul>
+                    <li><b>VersionOne Server URL</b>: The URL of your VersionOne instance</li>
+                    <li><b>VersionOne Username</b>: The domain and username of the member account that the listener will use (i.e. &quot;MyDomain\username&quot;)</li>
+                    <li><b>VersionOne Password</b>: Leave this field blank</li>
+                </ul>
+                <p>
+                    <a class="fancybox" href="screenshots/V1Config.jpg" title="VersionOne Server Configuration">
+                    <img alt="" src="thumbnails/v1config.png" /></a>
+                </p>
+                <p>Click the <b>Test Connection</b> button to ensure a successful login to VersionOne. The green box at the bottom of the dialog should display a successfully connected message.</p>
+            </li>
+            <li>TFS Server
+                <p>This tab allows you to subscribe to TFS Events. All of these parameters are required.</p>
+                <p>&nbsp;</p>
+                <p>
+                    <a class="fancybox" href="screenshots/TFSConfig.jpg" title="TFS Server Configuration"><img alt="" src="thumbnails/tfsconfig.png" /></a> 
+				</p>
+			</li>
+
+			<li>Advanced
+				<p>
+					This tab allows you to configure the regular expression used to
+					match VersionOne IDs in Check-in comments and enable a debug log.
+					This configuration is optional since we set the default value to a
+					working expression. We do not recommend you change this unless
+					necessary.</p>
+                <p>
+					<em><br /> 
+                    <a class="fancybox" href="screenshots/AdvancedConfig.jpg" title="Advanced Configuration"><img alt="" src="thumbnails/advancedconfig.png" /></a> 
+				</p>
+			</li>
+		</ol>
+
+		</em>
+
+		<h3>Installing the TFS Policy</h3>
+		<p>The VersionOne Check-in Policy ensures that each TFS Check-in
+			contains a VersionOne identifier. This policy must be installed on
+			each machine running Visual Studio. To install the VersionOne
+			Check-in policy, execute VersionOne.TFSPolicy.Installer.vsix on the
+			client machine.
+        </p>
+
+		<h3>Enabling the TFS Policy for a Project</h3>
+		<p>In order to be considered when performing a check-in, the
+			VersionOne TFS Check-in policy must be enabled on a TFS project.
+			Perform the following steps to enable the Check-in policy on a TFS
+			Project		
+        </p>
+        <ol>
+			<li>Open Visual Studio</li>
+			<li>Open the Team Explorer</li>
+			<li>Right click on the desired project</li>
+			<li>Select &quot;Team Project Settings&quot;</li>
+			<li>Select &quot;Source Control...&quot;
+                <br /> 
+                <a class="fancybox" href="screenshots/TFS.EnablePolicy.1.jpg" title="Select Source Control"><img alt="" src="thumbnails/tfsenablepolicy1.png" /></a>
+			</li>
+			<li>Select the &quot;Check-in Policy&quot; tab<br />
+                <a class="fancybox" href="screenshots/TFS.EnablePolicy.2.jpg" title="Check-in Policy Tab"><img alt="" src="thumbnails/tfsenablepolicy2.png" /></a>
+            </li>
+			<li>Click "Add"</li>
+			<li>Select the &quot;VersionOne Policy&quot;<br />
+                <a class="fancybox" href="screenshots/TFS.EnablePolicy.3.jpg" title="Add Check-in Policy"><img alt="" src="thumbnails/tfsenablepolicy3.png" /></a>
+            </li>
+			<li>Click Ok to close the &quot;Add Check-in Policy&quot; dialog</li>
+			<li>Click Ok to close the &quot;Source Control Settings&quot; dialog</li>
+		</ol>
+
+		<h3>Enable VersionOne Build Integration</h3>
+		<p>In order to access TFS Build Runs in VersionOne you must
+			configure the VersionOne application. The following steps describe
+			how to enable build integration, create a build project, and assign
+			that project to a project containing stories and defects.</p>
+		
+            <!-- TOPIC NO LONGER EXISTS
+            <p class='info'>
+			If you are using Team Edition, you need to manually create the Build
+			Project. Instructions for doing this are available on the <a
+				href="http://community.versionone.com/KnowledgeBase/FAQs/Q11417.aspx">VersionOne
+				Community Site</a>.
+		    </p>
+            -->
+
+		<ol>
+			<li>Log into the VersionOne application as admin</li>
+			<li>Navigate to the Admin &gt; Configuration &gt; System page.</li>
+			<li>Check the &quot;Enable Build Integration&quot; checkbox and click the Apply button.<br /> 
+                <a class="fancybox" href="screenshots/EnableBuildIntegration.jpg" title="Enable Build Integration"><img alt="" src="thumbnails/enablebuildintegration.png" /></a>
+			</li>
+			<li>Navigate to the Admin &gt; Projects &gt; Build Project page<br />
+                <a class="fancybox" href="screenshots/BuildProjects.jpg" title="VersionOne BuildProjects"><img alt="" src="thumbnails/buildprojects.png" /></a>
+            </li>
+			<li>Click Add to add a new Build Project</li>
+			<li>Specify the following
+				<ol>
+					<li>Name: this is how the Build Project will be known to VersionOne users</li>
+					<li>Reference: this is how the Build Project will be known to TFS</li>
+				</ol>
+			</li>
+			<li>Click Ok to save the new Build Project</li>
+			<li>Navigate to the Admin &gt; Projects &gt; Projects page</li>
+			<li>Click Edit on the row for the project you want associated with a Build Project</li>
+			<li>Using the &quot;Build Projects&quot; dropdown add the appropriate Build Project.<br />
+                <a class="fancybox" href="screenshots/AssignBuildProjectToProject.jpg" title="Assign BuildProject to Project"><img alt="" src="thumbnails/assignbuildprojecttoproject.png" /></a>
+			</li>
+			<li>Click Ok to accept the changes</li>
+			<li>Logout</li>
+		</ol>
+
+		<h2><a name="UsingTheIntegration"></a>Using the Integration</h2>
+		<p>Perform the following steps to use the integration:</p>
+		<ol>
+			<li>Open a Visual Studio project that is in the selected TFS project
+			<li>Open a file and make a change (for instance, add a comment)</li>
+			<li>Save the change</li>
+			<li>Check-in the change</li>
+			<li>Type a comment, but do not provide a VersionOne identifier</li>
+			<li>Click Check In
+				<p>
+					You should be presented with the following dialog <br /> 
+                    <a class="fancybox" href="screenshots/V1Credentials.jpg" title="VersionOne Credentials"><img alt="" src="thumbnails/v1credentials.png" /></a>
+				</p>
+			</li>
+			<li>Provide the VersionOne URL and your credentials
+				<p class='info'>You may want to wait until after testing to cache credentials.</p>
+			</li>
+			<li>Click OK
+				<p>
+					You should now be presented with the following dialog, populated
+					with information from your VersionOne Server <br /> 
+                    <a class="fancybox" href="screenshots/V1Associate.jpg" title="Associate Check-in with VersionOne Workitems"><img alt="" src="thumbnails/v1associate.png" /></a>
+				</p>
+			</li>
+			<li>Select an Item in VersionOne</li>
+			<li>Click OK
+				<p>Once the check-in completes, launch your browser and navigate
+					to VersionOne. Login and locate the item you chose to associate
+					with the check-in. Click on the item to open the details page. You
+					should now see data in the following grids: Changesets, Last
+					Affected Build Runs, and Affected Build Runs.</p>
+			</li>
+		</ol>
+
+		<h1><a name="Troubleshootingtips"></a>Troubleshooting Tips</h1>
+		<ul>
+			<li>If you do not see any ChangeSet or Build relationships
+				<ul>
+					<li>Verify that Changesets and Build Integration are both enabled in VersionOne</li>
+					<li>Ensure you selected the same VersionOne Story or Defect in Visual Studio and VersionOne</li>
+					<li>Use the TFS Listener Configuration tool and verify that you are subscribed to TFS Events</li>
+					<li>Ensure that the following VersionOne URLs point to the same instance
+						<ul>
+							<li>The TFS Listener URL (using the Listener Configuration utility)</li>
+							<li>The URL used in Visual Studio</li>
+							<li>The Browser URL</li>
+						</ul>
+					</li>
+					<li>Navigate to the TFS Listener URL, specified in the Listener Configuration Utility, and make sure the WebService is running</li>
+					<li>Check the application event log on the TFS Listener machine for any TFS errors</li>
+				</ul>
+			</li>
+			<li>If you do not see Build relationships, check the following
+				<ul>
+					<li>Verify that Build Integration is enabled and configured properly in VersionOne</li>
+					<li>Verify that a build executed when the check-in was performed. If not, or if you only build daily, you will need to force a build</li>
+					<li>ChecCheck the application event log on the TFS Listener machine for any TFS errors</li>
+				</ul>
+			</li>
+		</ul>
+
+		<h1><a name="Technology"></a>Technology</h1>
+		<ul>
+            <li>The VersionOne Integration for TFS was developed in C# using Visual Studio.io.</li>
+            <li>The TFS Listener Installer was developed using <a href="http://wix.sourceforge.net/index.html">WIX</a>.</li>
+            <li>Source code is available in a <a href="https://github.com/versionone/VersionOne.Integration.TFS.Core">GitHub repo</a>.</li>
+            <li>Previous releases of this integration are available in the <a href="http://appcatalog.versionone.com/VersionOne.Integration.VSTFS">VersionOne Application Catalog</a>.
+		</li>
+        </ul>
+
+	</div>
 </body>
-
-
-
 </html>
