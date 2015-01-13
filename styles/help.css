@@ -87,13 +87,14 @@ p {
 	h1 {
 		font-weight: bold; 
 		color: #222;
-		font-size: 36px;
+		font-size: 38px;
 		line-height: 1.5;
+        text-align: center
 	}
 	
 	h2 { 
 	  font-weight: bold; 
-		color: #222;
+		color: #565656;
 		font-size: 28px;
 		line-height: 1.25;
 	}
@@ -107,8 +108,8 @@ p {
 	
 	h4 { 
 	  font-weight: bold; 
-		color: #222;
-		font-size: 18px;
+		color: #565656;
+		font-size: 16px;
 		line-height: 1.25;
 	}
 		
@@ -133,12 +134,14 @@ p {
 
     /*Content Bar*/
     #Content-Nav{
-    background: #f7f7f7; 
-    padding: 8px; /* Give the items some air to breathe */
+    background: none; 
+    padding: 6px; /* Give the items some air to breathe */
+    text-align:center
 }
 
     #Content-Nav > li {
     display: inline-block;
+    
     zoom:1;
     *display:inline;
     /* this fix is needed for IE7- */
@@ -147,14 +150,17 @@ p {
     #Content-Nav > li > a{
     color: #666666;
     text-decoration: none;
-    padding: 3px 8px;
+    padding: 4px 14px;
+      
 }
+    
 
-    #my-list > li > a:hover{
-    color: black;
+    #Content-Nav > li > a:hover{
+    color: #78082d;
+    
+    background:#f0f0f0;
 }
-
-
+       
 /*body {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", Arial, Helvetica, sans-serif;
 	font-size: 14px;
@@ -198,61 +204,176 @@ div.main {
 .tip-top .get-social a:hover {background-color: #efefef;}
 .tip-top .get-social .txt a {background-image: none;text-indent: 0;color: #fff;text-decoration: none;width: auto;height: auto;font-size: 12px;padding: 2px 5px 2px 5px;}
 .tip-top .get-social .txt a:hover {background: #efefef;color: #CE8416;}
-header {height: 80px;background: #f9f9f9;min-width: 1000px;}
+
 
 /* Branding */
 header .logo {width: 244px;height: 45px;position: absolute;top: 7px;}
 
 /* Global Nav */
+header {height: 60px;background: black;min-width: 1000px;}
 header ul {float: left;}
-header ul li {display: inline-block;float: left;position: relative;}
+header ul li {display: inline-block;float: left;position: relative; margin-top:0em; margin-bottom:0em; }
 header ul li a {display: block;padding: 0 10px;text-decoration: none}
-header .global-menu-bottom a {display: block;padding: 0 20px;text-decoration: none}
+header .global-menu-bottom a {display: block;padding: 0 30px;text-decoration: none}
 header .global-menu-bottom a.last {display: block;padding: 0 10px 0 20px;text-decoration: none}
 header ul li a:hover {color: #78082d;}
 header .global-menu-top {position: absolute;right: 0;}
-header .global-menu-top {top: 20px;}
+header .global-menu-top {top: .5em;}
 header .global-menu-top a {font-size: 12px;color: #444;}
 header .global-menu-bottom {position: absolute;right: 0;}
 header .global-menu-bottom {top: 8px;}
-header .global-menu-bottom a {font-size: 16px;color: #000;}
+header .global-menu-bottom a {font-size: 16px;color: #ffffff;}
 header form {position: absolute;right: 0;}
 
-/*Footer*/
-.v1footer {background-image: url("http://www.versionone.com/assets/img/footer-bg.png"); background-repeat:repeat-x; !important;display: block;min-width: 1000px;}
-.v1footer .container {position: relative;height: 428px !important;padding-bottom: 0 !important;}
-.v1footer .col {float: left;padding: 25px 0 0 0;}
-.v1footer h3 {font-size: 13px;color: #fff;padding-bottom: 26px}
-.v1footer ul {list-style: none;padding-left:0px; margin-left: 0;}
-.v1footer .get-social {width: 100px;margin-right: 50px;margin-left: 0px;}
-.v1footer .get-social li {float: left; width: 33px; margin: 0 17px 7px 0;}
-.v1footer .get-social a {display: block;width: 33px;height: 33px;background-image: url("http://www.versionone.com/assets/img/footer-sprite.png");background-repeat: no-repeat;text-indent: -9000em;overflow: hidden;-webkit-transition: background .2s ease-out .2s;-moz-transition: background .2s ease-out .2s;-o-transition: background .2s ease-out .2s;transition: background .2s ease-out .2s;}
-.v1footer .get-social .linkedin {background-position: 0 0;background-color: #84b5d1;}
-.v1footer .get-social .google {background-position: -99px 0;background-color: #373737;}
-.v1footer .get-social .twitter {background-position: -33px 0;background-color: #73ace2;}
-.v1footer .get-social .youtube {background-position: -132px 0;background-color: #c71e36;}
-.v1footer .get-social .facebook {background-position: -66px 0;background-color: #47549e;}
-.v1footer .get-social .blogs {background-position: -165px 0;background-color: #e8c03a;}
-.v1footer .get-social .linkedin:hover {background-position: 0 -33px;}
-.v1footer .get-social .google:hover {background-position: -99px -33px;}
-.v1footer .get-social .twitter:hover {background-position: -33px -33px;}
-.v1footer .get-social .youtube:hover {background-position: -132px -33px;}
-.v1footer .get-social .facebook:hover {background-position: -66px -33px;}
-.v1footer .get-social .blogs:hover {background-position: -165px -33px;}
-.v1footer .get-social a:hover {background-color: #efefef;}
-.v1footer .quick-links {width: 370px;}
-.v1footer .quick-links ul {float: left;margin-right: 50px;margin-top:0px;margin-left: 0px;}
-.v1footer .quick-links a {display: block;padding: 0 0 8px 0;color: #cfcfcf;font-size: 13px;text-decoration: none;}
-.v1footer .quick-links a:hover {color: #fff;}
-.v1footer .popular-keywords {}
-.v1footer .popular-keywords ul {float: left;margin-right: 50px;margin-top:0px;margin-left: 0px;}
-.v1footer .popular-keywords a {display: block;padding: 0 0 8px 0;color: #cfcfcf;font-size: 13px;text-decoration: none;}
-.v1footer .popular-keywords a:hover {color: #fff;}
-.v1footer .going-up {display: block;position: absolute;top: 10px;right: 10px;width: 50px;height: 83px;background: url("http://www.versionone.com/assets/img/footer-sprite.png") -198px 0 no-repeat;text-indent: -9000em;overflow: hidden;-webkit-transition: background 300ms linear 200ms;-moz-transition: background 300ms linear 200ms;-o-transition: background 300ms linear 200ms;transition: background 300ms linear 200ms;}
-.v1footer .going-up:hover {background: url("http://www.versionone.com/assets/img/footer-sprite.png") -198px -83px no-repeat;}
-.v1footer .copyright {position: absolute;right: 10px;bottom: 10px;padding: 10px 78px 10px 0;text-align: right;color: #bfbfbf;font-size: 11px;line-height: 1.8em;background: url("http://www.versionone.com/assets/img/footer-sprite.png") 230px -115px no-repeat;}
-.v1footer .copyright a {color: #cfcfcf;font-size: 12px;}
-.v1footer .agile-made-easier {position: absolute;left: 0;bottom: 10px;padding: 14px 30px;border: 1px solid #565656;color: #eee;font-size: 18px;}
+footer {
+	background: black;
+	display: block;
+	min-width: 1000px;
+}
+footer .page {
+	position: relative;
+	height: 80px !important;
+	padding-bottom: 0 !important;
+}
+footer .col {
+	float: left;
+	padding: 46px 0 0 0;
+}
+footer h3 {
+	font-size: 13px;
+	color: #fff;
+	padding-bottom: 26px
+}
+footer ul {
+	list-style: none;
+}
+footer .get-social {
+	width: 100px;
+	margin-right: 50px;
+}
+footer .get-social li {
+	float: left;
+	width: 33px;
+	margin: 0 17px 7px 0;
+}
+footer .get-social a {
+	display: block;
+	width: 33px;
+	height: 33px;
+	background-image: url(http://www.versionone.com/assets/img/footer-sprite.png);
+	background-repeat: no-repeat;
+	text-indent: -9000em;
+	overflow: hidden;
+	-webkit-transition: background .2s ease-out .2s;
+	-moz-transition: background .2s ease-out .2s;
+	-o-transition: background .2s ease-out .2s;
+	transition: background .2s ease-out .2s;
+}
+footer .get-social .linkedin {
+	background-position: 0 0;
+	background-color: #84b5d1;
+}
+footer .get-social .google {
+	background-position: -99px 0;
+	background-color: #373737;
+}
+footer .get-social .twitter {
+	background-position: -33px 0;
+	background-color: #73ace2;
+}
+footer .get-social .youtube {
+	background-position: -132px 0;
+	background-color: #c71e36;
+}
+footer .get-social .facebook {
+	background-position: -66px 0;
+	background-color: #47549e;
+}
+footer .get-social .blogs {
+	background-position: -165px 0;
+	background-color: #e8c03a;
+}
+footer .get-social .linkedin:hover {
+	background-position: 0 -33px;
+}
+footer .get-social .google:hover {
+	background-position: -99px -33px;
+}
+footer .get-social .twitter:hover {
+	background-position: -33px -33px;
+}
+footer .get-social .youtube:hover {
+	background-position: -132px -33px;
+}
+footer .get-social .facebook:hover {
+	background-position: -66px -33px;
+}
+footer .get-social .blogs:hover {
+	background-position: -165px -33px;
+}
+footer .get-social a:hover {
+	background-color: #efefef;
+}
+footer .quick-links {
+	width: 300px;
+}
+footer .quick-links ul {
+	float: left;
+	margin-right: 50px;
+}
+footer .quick-links a {
+	display: block;
+	padding: 0 0 8px 0;
+	color: #cfcfcf;
+	font-size: 13px;
+	text-decoration: none;
+}
+footer .quick-links a:hover {
+	color: #fff;
+}
+footer .popular-keywords {
+}
+footer .popular-keywords ul {
+	float: left;
+	margin-right: 50px;
+}
+footer .popular-keywords a {
+	display: block;
+	padding: 0 0 8px 0;
+	color: #cfcfcf;
+	font-size: 13px;
+	text-decoration: none;
+}
+footer .popular-keywords a:hover {
+	color: #fff;
+}
+
+
+footer .copyright {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	padding: 4px 90px 10px 0;
+	text-align: right;
+	color: #bfbfbf;
+	font-size: 11px;
+	line-height: 1.8em;
+	background: url(http://www.versionone.com/assets/img/footer-sprite.png) 250px -109px no-repeat;
+}
+footer .copyright a {
+	color: #cfcfcf;
+	font-size: 12px;
+}
+footer .agile-made-easier {
+	position: absolute;
+	left: 0;
+	bottom: 10px;
+	padding: 14px 30px;
+	border: 1px solid #565656;
+	color: #eee;
+	font-size: 18px;
+}
+/* ================================ end | Footer */
 
 /*External Links*/
 /*a.external { background-image: none !important; padding: 0px; } */
@@ -323,14 +444,14 @@ ol {
 }
 
 ol li {
-	color: #212121;
+	color: #565656;
 	font-weight: bold;
-	margin-top: 2em;
-	margin-bottom: 2em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 ol li * {
-	color: #454545;
+	color: #565656;
 	font-weight: normal;
 }
 
