@@ -211,11 +211,12 @@ V1TFS->VersionOne: BuildRun
 
         <div class="row">
             <div class="seven columns">
-
-
                 <h4>Installing the TFS Listener</h4>
                 <p>
-                    The VersionOne TFS Listener is a web service that must be installed on a machine that has access to your VersionOne server and your Team Foundation Server. It is recommended that you install the listener on the Team Foundation Server.
+                    The VersionOne TFS Listener is a web service that must be
+                    installed on a machine that has access to your VersionOne server and
+                    your Team Foundation Server. It is recommended that you install the
+                    listener on the Team Foundation Server.
                 </p>
                 <p>
                     To install the listener, execute
@@ -302,15 +303,13 @@ AR-SA">VersionOne.Integration.Tfs.Listener.Config</span>.
                     <li>VersionOne Username: The domain and username of the member account that the listener will use (i.e. &quot;MyDomain\username&quot;)</li>
                     <li>VersionOne Password: Leave this field blank</li>
                 </ul>
-                <p>Click the <b>Test Connection</b> button to ensure a successful login to VersionOne. The green box at the bottom of the dialog should display a successfully connected message.</p>
             </div>
 
-            <br /><br /><br />
+            <br />
             <div class="five columns">
-                <p><a class="fancybox" href="screenshots/V1Config.jpg" title="VersionOne Server Configuration"><img alt="" src="thumbnails/v1config.png" class="internal" style=" box-shadow: 3px 4px 6px #888888;" /></a></p>
+                <p>Click the <b>Test Connection</b> button to ensure a successful login to VersionOne. The green box at the bottom of the dialog should display a successfully connected message.</p>
 
-
-
+                <p><a class="fancybox" href="screenshots/V1TFSListener_V1ServerTab.png" title="VersionOne Server Configuration"><img alt="" src="thumbnails/v1tfslistener_v1servertab.png" class="internal" style=" box-shadow: 3px 4px 6px #888888;" /></a></p>
             </div>
         </div>
 
@@ -320,12 +319,23 @@ AR-SA">VersionOne.Integration.Tfs.Listener.Config</span>.
                 <br /><br /><br />
                 <h4>TFS Server</h4>
 
-                <p>This tab allows you to subscribe to TFS Events. All of these parameters are required.</p>
-                <p>&nbsp;</p>
-            </div>
-            <div class="five columns">
+                <p>This tab allows you to subscribe to TFS Events. Complete the following:</p>
+                <ul>
+                    <li>TFS Server URL: The URL of your TFS server.</li>
+                    <li>TFS Username: The username of your TFS server that the listener will use.</li>
+                    <li>TFS Password: The password of your TFS server that the listener will use.</li>
+                </ul>
                 <p>
-                    <a class="fancybox" href="screenshots/TFSConfig.jpg" title="TFS Server Configuration"><img alt="" src="thumbnails/tfsconfig.png" /></a>
+                    Click on the Connect button to test login success for your TFS server.&nbsp; If TFS server connection is successful, click on the Subscribe button to enable TFS Events that should connect with VersionOne.&nbsp; You should see the &quot;CheckinEvent2&quot; and the &quot;BuildCompletionEvent&quot; appear in the Current Subscriptions box.
+                </p>
+
+            </div>
+
+
+            <div class="five columns">
+                <br /><br />
+                <p>
+                    <a class="fancybox" href="screenshots/V1TFSListener_TFSServerTab.png" title="TFS Server Configuration"><img alt="" src="thumbnails/v1TFSlistener_TFSservertab.png" class="internal" style=" box-shadow: 3px 4px 6px #888888;" /></a>
                 </p>
             </div>
         </div>
@@ -341,19 +351,18 @@ AR-SA">VersionOne.Integration.Tfs.Listener.Config</span>.
                     working expression. We do not recommend you change this unless
                     necessary.
                 </p>
-                </div>
-            <div class="five columns">
-                
-                <p>
-                        <a class="fancybox" href="screenshots/AdvancedConfig.jpg" title="Advanced Configuration"><img alt="" src="thumbnails/advancedconfig.png" /></a>
-                </p>
-                </div>
             </div>
+            <div class="five columns">
 
+                <p>
+                    <a class="fancybox" href="screenshots/V1TFSListener_AdvancedTab.png" title="Advanced Configuration"><img alt="" src="thumbnails/v1TFSlistener_advancedtab.png" style=" box-shadow: 3px 4px 6px #888888;" /></a>
+                </p>
+            </div>
+        </div>
+        <br /><br />
 
-
-
-
+        <div class="row">
+            <div class="twelve columns">
                 <h4>Installing the TFS Policy</h4>
                 <p>
                     The VersionOne Check-in Policy ensures that each TFS Check-in
@@ -370,29 +379,31 @@ AR-SA">VersionOne.Integration.Tfs.Listener.Config</span>.
                     Perform the following steps to enable the Check-in policy on a TFS
                     Project
                 </p>
+
                 <ol>
-                    <li>Open Visual Studio</li>
-                    <li>Open the Team Explorer</li>
-                    <li>Right click on the desired project</li>
-                    <li>Select &quot;Team Project Settings&quot;</li>
+                    <li>Open Visual Studio.</li>
+                    <li>Open the Team Explorer - Home.</li>
+                    <li>Click on Settings.</li>
                     <li>
-                        Select &quot;Source Control...&quot;
-                        <br />
-                        <a class="fancybox" href="screenshots/TFS.EnablePolicy.1.jpg" title="Select Source Control"><img alt="" src="thumbnails/tfsenablepolicy1.png" /></a>
+                        Select &quot;Source Control&quot; from the Team Project List.<br />
+                        <a class="fancybox" href="screenshots/VS2013_TeamExpSettings_SourceControl.png" title="Select Source Control"><img alt="" src="thumbnails/vs2013_teamexpsettings_sourcecontrol.png" style=" box-shadow: 3px 4px 6px #888888;" /></a>
                     </li>
                     <li>
                         Select the &quot;Check-in Policy&quot; tab<br />
-                        <a class="fancybox" href="screenshots/TFS.EnablePolicy.2.jpg" title="Check-in Policy Tab"><img alt="" src="thumbnails/tfsenablepolicy2.png" /></a>
+                        <a class="fancybox" href="screenshots/VS2013_CheckinPolicyTab.png" title="Check-in Policy Tab"><img alt="" src="thumbnails/vs2013_checkinpolicytab.png" style=" box-shadow: 3px 4px 6px #888888;" /></a>
                     </li>
                     <li>Click "Add"</li>
                     <li>
                         Select the &quot;VersionOne Policy&quot;<br />
-                        <a class="fancybox" href="screenshots/TFS.EnablePolicy.3.jpg" title="Add Check-in Policy"><img alt="" src="thumbnails/tfsenablepolicy3.png" /></a>
+                        <a class="fancybox" href="screenshots/VS2013_V1CheckinPolicy.png" title="Add Check-in Policy"><img alt="" src="thumbnails/vs2013_v1vheckinpolicy.png" style=" box-shadow: 3px 4px 6px #888888;" /></a>
                     </li>
                     <li>Click Ok to close the &quot;Add Check-in Policy&quot; dialog</li>
-                    <li>Click Ok to close the &quot;Source Control Settings&quot; dialog</li>
                 </ol>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="twelve columns">
                 <h4>Enable VersionOne Build Integration</h4>
                 <p>
                     In order to access TFS Build Runs in VersionOne you must
@@ -400,26 +411,16 @@ AR-SA">VersionOne.Integration.Tfs.Listener.Config</span>.
                     how to enable build integration, create a build project, and assign
                     that project to a project containing stories and defects.
                 </p>
-
-                <!-- TOPIC NO LONGER EXISTS
-                <p class='info'>
-                If you are using Team Edition, you need to manually create the Build
-                Project. Instructions for doing this are available on the <a
-                    href="http://community.versionone.com/KnowledgeBase/FAQs/Q11417.aspx">VersionOne
-                    Community Site</a>.
-                </p> -->
-
-
                 <ol>
                     <li>Log into the VersionOne application as admin</li>
                     <li>Navigate to the Admin &gt; Configuration &gt; System page.</li>
                     <li>
                         Check the &quot;Enable Build Integration&quot; checkbox and click the Apply button.<br />
-                        <a class="fancybox" href="screenshots/EnableBuildIntegration.jpg" title="Enable Build Integration"><img alt="" src="thumbnails/enablebuildintegration.png" /></a>
+                        <a class="fancybox" href="screenshots/V1_EnableBuildIntegration.png" title="Enable Build Integration"><img alt="" src="thumbnails/v1_enablebuildintegration.png" style=" box-shadow: 3px 4px 6px #888888;" /></a>
                     </li>
                     <li>
                         Navigate to the Admin &gt; Projects &gt; Build Project page<br />
-                        <a class="fancybox" href="screenshots/BuildProjects.jpg" title="VersionOne BuildProjects"><img alt="" src="thumbnails/buildprojects.png" /></a>
+                        <a class="fancybox" href="screenshots/BuildProjects.jpg" title="VersionOne BuildProjects"><img alt="" src="thumbnails/buildprojects.png" style=" box-shadow: 3px 4px 6px #888888;" /></a>
                     </li>
                     <li>Click Add to add a new Build Project</li>
                     <li>
@@ -525,6 +526,8 @@ AR-SA">VersionOne.Integration.Tfs.Listener.Config</span>.
                         Previous releases of this integration are available in the <a href="http://appcatalog.versionone.com/VersionOne.Integration.VSTFS">VersionOne Application Catalog</a>.
                     </li>
                 </ul>
+                </div>
+            </div>
 
             </div>
         </div>
