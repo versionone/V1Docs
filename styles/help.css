@@ -77,7 +77,7 @@
 
 
 
-	body { background: #fff; font-family: "Lucida Sans Unicode", "Lucida Grande", Arial, Helvetica, sans-serif; font-size: 13px; color: #454545; line-height: 18px; text-shadow: 0 0 1px rgba(0,0,0,0.01); color: #555; }
+	body { background: #fff; font-family: "Segoe UI","Lucida Sans Unicode","Lucida Grande",sans-serif; font-size: 13px; color: #555; line-height: 22px; text-shadow: 0 0 1px rgba(0,0,0,0.01); color: #555; }
 	
 
 p {
@@ -87,16 +87,18 @@ p {
 	h1 {
 		font-weight: bold; 
 		color: #1E1E1E;
-		font-size: 38px;
+		font-size: 30px;
 		line-height: 1.5;
         text-align: center
 	}
 	
 	h2 { 
-	  font-weight: bold; 
-		color: #CA7700;
-		font-size: 28px;
+	  font-weight: normal; 
+		color: #CB632A;
+		font-size: 22px;
 		line-height: 1.25;
+        padding-top: .75em;
+        padding-bottom: .75em;
 	}
 	
 	h3 { 
@@ -107,8 +109,8 @@ p {
 	}
 	
 	h4 { 
-	  font-weight: bold; 
-		color: #939598;
+	  font-weight: normal; 
+		color: black;
 		font-size: 16px;
 		line-height: 1.25;
 	}
@@ -155,7 +157,7 @@ p {
     
 
     #Content-Nav > li > a:hover{
-    color: #78082d;
+    color: #CB632A;
     
     background:#f0f0f0;
 }
@@ -325,19 +327,19 @@ ul {
 	display: block;
     margin-top: .5 em;
 	margin-bottom: .5 em;
-    }
+}
 
 ul li {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
-    list-style: circle inside none;
+    list-style: disc inside none;
     padding-left:2em;    
 }
 
 ul li ul li{
     margin-top: 0.5em;
 	margin-bottom: 0.5em;
-    list-style: disc inside none;
+    list-style: circle inside none;
     padding-left: 2em;    
 }
 
@@ -359,7 +361,7 @@ ol {
 
 ol li {
 	color: #565656;
-	font-weight: bold;
+	font-weight: normal;
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
     list-style-type: decimal;
@@ -381,7 +383,7 @@ ol li ol li {
 /* Links get a pseudo-underline */
 a {
 	color: #07496B;
-    text-decoration: none;
+    text-decoration: underline;
     padding-bottom: 0px;
     /* border-bottom: 1px solid #ebb229; */
 }
@@ -390,7 +392,7 @@ a {
 /* Links get an underline-effect when hovered */
 a:hover {
 	color: #009FF2;
-    text-decoration: none;
+    text-decoration: underline;
     padding-bottom: 0px;
     /* border-bottom: 1px solid #cb632a; */
 }

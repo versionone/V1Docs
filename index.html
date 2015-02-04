@@ -110,7 +110,7 @@
             </div>
 
             <div class="seven columns">
-                <br /><br /><br />
+                <br /><br />
                 <p>The following sequence diagram shows the primary workflows of the integration:</p>
                 <div class=wsd wsd_style="qsd">
 <pre>
@@ -127,7 +127,7 @@ V1TFS->VersionOne: BuildRun
                 <script type="text/javascript" src="http://www.websequencediagrams.com/service.js"></script>
             </div>
         </div>
-        <br /><br />
+
 
 
         <div class="row">
@@ -309,7 +309,7 @@ AR-SA">VersionOne.Integration.Tfs.Listener.Config</span>.
             <div class="five columns">
                 <p>Click the <b>Test Connection</b> button to ensure a successful login to VersionOne. The green box at the bottom of the dialog should display a successfully connected message.</p>
 
-                <p><a class="fancybox" href="screenshots/V1TFSListener_V1ServerTab.png" title="VersionOne Server Configuration"><img alt="" src="thumbnails/v1tfslistener_v1servertab.png" class="internal" style=" box-shadow: 3px 4px 6px #888888;" /></a></p>
+                <p><a class="fancybox" href="screenshots/v1TFSListener_V1ServerTab.png" title="VersionOne Server Configuration"><img alt="" src="thumbnails/v1tfslistener_v1servertab.png" class="internal" style=" box-shadow: 3px 4px 6px #888888;" /></a></p>
             </div>
         </div>
 
@@ -442,6 +442,263 @@ AR-SA">VersionOne.Integration.Tfs.Listener.Config</span>.
                 </ol>
 
                 <br /><br />
+            </div>
+        </div>
+
+        <hr />
+        <hr />
+        <h2><a name="Installation"></a>Installation and Configuration</h2>
+        <p>Before using the integration you will need to perform the following actions:</p>
+        <ol>
+            <li>Install and configure the TFS Listener.</li>
+            <li>Install and enable the TFS Policy.</li>
+            <li>Enable VersionOne for Build Integration.</li>
+        </ol>
+    </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="seven columns">
+            <h4>Installing the TFS Listener</h4>
+            <p>
+                The VersionOne TFS Listener is a web service that must be
+                installed on a machine that has access to your VersionOne server and
+                your Team Foundation Server. It is recommended that you install the
+                listener on the Team Foundation Server.
+            </p>
+            <p>
+                To install the listener, execute
+                the <strong>VersionOne.Integration.TFS.Listener.Installer.msi</strong> on the appropriate machine and
+                follow the steps in the installation wizard. You can verify the
+                listener by navigating to the following URL into your browser:<br />
+                <code>http://[machine]:[port]/Service.svc</code>
+            </p>
+            <p>
+                <em>
+                    Note: Replace [machine] with the name of the machine hosting the
+                    service, and [port] with the TCP port number that you provided in the
+                    installer.
+                </em>
+            </p>
+
+            <p>
+                For instance, if the machine hosting your TFS Server is called &quot;TFSServer&quot; and you specified port 9090 during the install, your
+                URL would be:<br />
+                <code> http://tfsserver:9090/Service.svc </code>
+            </p>
+        </div>
+
+        <br /><br />
+        <div class="five columns">
+            <p>
+                If successful, you should see a page similar to the following:
+            </p>
+
+            <br />
+
+            <p><a class="fancybox" href="screenshots/ListenerWorks.jpg" title="TFS Listener Service"><img alt="" class="internal" src="thumbnails/listenerworks.png" style=" box-shadow: 3px 4px 6px #888888;" /></a></p>
+
+
+        </div>
+    </div>
+    <br /><br />
+
+    <div class="row">
+        <div class="twelve columns">
+            <h4>Configuring the TFS Listener</h4>
+            <p>
+                In order for the TFS Listener to work it must know which
+                VersionOne instance to use when creating assets and making
+                associations, and which TFS instance to use for listening to events. Configuring the TFS Listener is accomplished using the TFS Listener Configuration tool. The configuration tool is a separate Windows application that is installed as part of the listener installation. If you need to reconfigure the listener at a later date, the configuration tool is available from the Windows Start menu under
+                Program Files &gt; VersionOne &gt; TFS Listener &gt; <span style="font-size:10.5pt;line-height:107%;
+font-family:&quot;Lucida Sans Unicode&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;
+color:#454545;mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:
+AR-SA">VersionOne.Integration.Tfs.Listener.Config</span>.
+            </p>
+
+            <p>The configuration tool has 3 tabs:</p>
+
+            <ol>
+                <li>VersionOne Server</li>
+                <li>TFS Server</li>
+                <li>Advanced</li>
+            </ol>
+        </div>
+    </div>
+
+
+    <br />
+    <div class="row">
+        <div class="seven columns">
+            <h4>VersionOne Server</h4>
+            <p>
+                This tab allows you to configure connectivity
+                to your VersionOne instance. The values that you enter depend on the authentication method that your VersionOne instance is configured to use.
+            </p>
+            <p>
+                For VersionOne (Basic) authentication, enter the following values in the fields provided:
+            </p>
+            <ul>
+                <li>VersionOne Server URL: The URL of your VersionOne instance</li>
+                <li>VersionOne Username: The username of the member account that the listener will use </li>
+                <li>VersionOne Password: The password of the member account that the listener will use</li>
+            </ul>
+            <p>
+                For Windows authentication, enter the following values in the fields provided:
+            </p>
+            <ul>
+                <li>VersionOne Server URL: The URL of your VersionOne instance</li>
+                <li>VersionOne Username: The domain and username of the member account that the listener will use (i.e. &quot;MyDomain\username&quot;)</li>
+                <li>VersionOne Password: Leave this field blank</li>
+            </ul>
+        </div>
+
+        <br />
+        <div class="five columns">
+            <p>Click the <b>Test Connection</b> button to ensure a successful login to VersionOne. The green box at the bottom of the dialog should display a successfully connected message.</p>
+
+            <p><a class="fancybox" href="screenshots/v1TFSListener_V1ServerTab.png" title="VersionOne Server Configuration"><img alt="" src="thumbnails/v1tfslistener_v1servertab.png" class="internal" style=" box-shadow: 3px 4px 6px #888888;" /></a></p>
+        </div>
+    </div>
+
+    <br /><br />
+    <div class="row">
+        <div class="seven columns">
+            <br /><br /><br />
+            <h4>TFS Server</h4>
+
+            <p>This tab allows you to subscribe to TFS Events. Complete the following:</p>
+            <ul>
+                <li>TFS Server URL: The URL of your TFS server.</li>
+                <li>TFS Username: The username of your TFS server that the listener will use.</li>
+                <li>TFS Password: The password of your TFS server that the listener will use.</li>
+            </ul>
+            <p>
+                Click on the Connect button to test login success for your TFS server.&nbsp; If TFS server connection is successful, click on the Subscribe button to enable TFS Events that should connect with VersionOne.&nbsp; You should see the &quot;CheckinEvent2&quot; and the &quot;BuildCompletionEvent&quot; appear in the Current Subscriptions box.
+            </p>
+
+        </div>
+
+
+        <div class="five columns">
+            <br /><br />
+            <p>
+                <a class="fancybox" href="screenshots/V1TFSListener_TFSServerTab.png" title="TFS Server Configuration"><img alt="" src="thumbnails/v1TFSlistener_TFSservertab.png" class="internal" style=" box-shadow: 3px 4px 6px #888888;" /></a>
+            </p>
+        </div>
+    </div>
+    <br /><br />
+    <div class="row">
+        <div class="seven columns">
+            <br /><br />
+            <h4>Advanced</h4>
+            <p>
+                This tab allows you to configure the regular expression used to
+                match VersionOne IDs in Check-in comments and enable a debug log.
+                This configuration is optional since we set the default value to a
+                working expression. We do not recommend you change this unless
+                necessary.
+            </p>
+        </div>
+        <div class="five columns">
+
+            <p>
+                <a class="fancybox" href="screenshots/V1TFSListener_AdvancedTab.png" title="Advanced Configuration"><img alt="" src="thumbnails/v1TFSlistener_advancedtab.png" style=" box-shadow: 3px 4px 6px #888888;" /></a>
+            </p>
+        </div>
+    </div>
+    <br /><br />
+
+    <div class="row">
+        <div class="twelve columns">
+            <h4>Installing the TFS Policy</h4>
+            <p>
+                The VersionOne Check-in Policy ensures that each TFS Check-in
+                contains a VersionOne identifier. This policy must be installed on
+                each machine running Visual Studio. To install the VersionOne
+                Check-in policy, execute VersionOne.TFSPolicy.Installer.vsix on the
+                client machine.
+            </p>
+
+            <h4>Enabling the TFS Policy for a Project</h4>
+            <p>
+                In order to be considered when performing a check-in, the
+                VersionOne TFS Check-in policy must be enabled on a TFS project.
+                Perform the following steps to enable the Check-in policy on a TFS
+                Project
+            </p>
+
+            <ol>
+                <li>Open Visual Studio.</li>
+                <li>Open the Team Explorer - Home.</li>
+                <li>Click on Settings.</li>
+                <li>
+                    Select &quot;Source Control&quot; from the Team Project List.<br />
+                    <a class="fancybox" href="screenshots/VS2013_TeamExpSettings_SourceControl.png" title="Select Source Control"><img alt="" src="thumbnails/vs2013_teamexpsettings_sourcecontrol.png" style=" box-shadow: 3px 4px 6px #888888;" /></a>
+                </li>
+                <li>
+                    Select the &quot;Check-in Policy&quot; tab<br />
+                    <a class="fancybox" href="screenshots/VS2013_CheckinPolicyTab.png" title="Check-in Policy Tab"><img alt="" src="thumbnails/vs2013_checkinpolicytab.png" style=" box-shadow: 3px 4px 6px #888888;" /></a>
+                </li>
+                <li>Click "Add"</li>
+                <li>
+                    Select the &quot;VersionOne Policy&quot;<br />
+                    <a class="fancybox" href="screenshots/VS2013_V1CheckinPolicy.png" title="Add Check-in Policy"><img alt="" src="thumbnails/vs2013_v1vheckinpolicy.png" style=" box-shadow: 3px 4px 6px #888888;" /></a>
+                </li>
+                <li>Click Ok to close the &quot;Add Check-in Policy&quot; dialog</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="twelve columns">
+            <h4>Enable VersionOne Build Integration</h4>
+            <p>
+                In order to access TFS Build Runs in VersionOne you must
+                configure the VersionOne application. The following steps describe
+                how to enable build integration, create a build project, and assign
+                that project to a project containing stories and defects.
+            </p>
+            <ol>
+                <li>Log into the VersionOne application as admin</li>
+                <li>Navigate to the Admin &gt; Configuration &gt; System page.</li>
+                <li>
+                    Check the &quot;Enable Build Integration&quot; checkbox and click the Apply button.<br />
+                    <a class="fancybox" href="screenshots/V1_EnableBuildIntegration.png" title="Enable Build Integration"><img alt="" src="thumbnails/v1_enablebuildintegration.png" style=" box-shadow: 3px 4px 6px #888888;" /></a>
+                </li>
+                <li>
+                    Navigate to the Admin &gt; Projects &gt; Build Project page<br />
+                    <a class="fancybox" href="screenshots/BuildProjects.jpg" title="VersionOne BuildProjects"><img alt="" src="thumbnails/buildprojects.png" style=" box-shadow: 3px 4px 6px #888888;" /></a>
+                </li>
+                <li>Click Add to add a new Build Project</li>
+                <li>
+                    Specify the following
+                    <ol>
+                        <li>Name: this is how the Build Project will be known to VersionOne users</li>
+                        <li>Reference: this is how the Build Project will be known to TFS</li>
+                    </ol>
+                </li>
+                <li>Click Ok to save the new Build Project</li>
+                <li>Navigate to the Admin &gt; Projects &gt; Projects page</li>
+                <li>Click Edit on the row for the project you want associated with a Build Project</li>
+                <li>
+                    Using the &quot;Build Projects&quot; dropdown add the appropriate Build Project.<br />
+                    <a class="fancybox" href="screenshots/AssignBuildProjectToProject.jpg" title="Assign BuildProject to Project"><img alt="" src="thumbnails/assignbuildprojecttoproject.png" /></a>
+                </li>
+                <li>Click Ok to accept the changes</li>
+                <li>Logout</li>
+            </ol>
+
+            <br /><br />
+        </div>
+    </div>
+<hr />
+
+
+
+        <div class="row">
+            <div class="twelve columns">
                 <h2><a name="UsingTheIntegration"></a>Using the Integration</h2>
                 <p>Perform the following steps to use the integration:</p>
                 <ol>
@@ -483,9 +740,12 @@ AR-SA">VersionOne.Integration.Tfs.Listener.Config</span>.
                         </p>
                     </li>
                 </ol>
-                <br /><br />
+            </div>
+        </div>
+        <br /><br />
 
-
+        <div class="row">
+            <div class="twelve columns">
                 <h2><a name="Troubleshootingtips"></a>Troubleshooting Tips</h2>
                 <ul>
                     <li>
@@ -526,19 +786,18 @@ AR-SA">VersionOne.Integration.Tfs.Listener.Config</span>.
                         Previous releases of this integration are available in the <a href="http://appcatalog.versionone.com/VersionOne.Integration.VSTFS">VersionOne Application Catalog</a>.
                     </li>
                 </ul>
-                </div>
-            </div>
-
             </div>
         </div>
-    </div></body>
+        </br>
+
+    </div>
+        </div>
+    </div>
+</body>
 
 <footer>
            <section class="page">
                 <link href="https://www.google.com/+VersionOne" rel="publisher" />
-                
-                
-                
                 
                 <div class="agile-made-easier">
                     Agile Made Easier
