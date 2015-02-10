@@ -1,4 +1,4 @@
 V1Docs
 ======
 
-Test repo for V1 integration documentation
+Test repo for V1 integration documentation.
